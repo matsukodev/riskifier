@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% load static %}
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Riskifier</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+        <!-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+        <!-- Custom styles for this template -->
+        <link href="{% static 'jumbotron.css' %}" rel="stylesheet">
+        <!-- <link href="jumbotron.css" rel="stylesheet"> -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <!-- BEGIN LinkedIn API -->
+        <!-- END Facebook API -->
+    </head>
+    <body>
+        <!-- BEGIN Facebook API -->
+        <!-- END Facebook API -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Riskifier</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right">
+                        <a href="/start/" class="btn btn-success">Try now</a>
+                    </form>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </nav>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <!-- <img src="assets/media/home-dummy-large.png" width="100%" class="hidden-xs hidden-sm" /> -->
+                <img src="{% static 'assets/media/home-dummy-large.png' %}" width="100%" class="hidden-xs hidden-sm" />
+
+                <!-- <img src="assets/media/home-dummy-small.png" width="100%" class="hidden-md hidden-lg" /> -->
+                <img src="{% static 'assets/media/home-dummy-small.png' %}" width="100%" class="hidden-md hidden-lg" />
+            </div>
+        </div>         
+        <!-- /container -->
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- <script src="assets/js/jquery.min.js"></script> -->
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!-- <script src="assets/js/ie10-viewport-bug-workaround.js"></script> -->
+        <script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+    </body>
+</html>

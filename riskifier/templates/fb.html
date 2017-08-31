@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Example</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+        api_key: 789vj428c20cdp
+        authorize: true
+        onLoad: onLinkedInLoad
+    </script>
+</head>
+<body>
+    <div id="fb-root"></div>
+
+    <script>
+         (function (d, s, id) {
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) return;
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1980520592194814";
+             fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+
+         function checkLoginState() {
+             FB.getLoginStatus(function (response) {
+                 statusChangeCallback(response);
+             });
+         }
+    </script>
+
+    <h1> FB Login Test</h1>
+
+    <div id="loginButton" onlogin="checkLoginState();" scope="public_profile,email,user_birthday,user_location,user_education_history,user_relationships,user_relationship_details" class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+    <br />
+    <br />
+
+    <h2 id="logstat"> FB User info </h2>
+    <form id="fbform" method="post" target="_blank">
+        Age: <input type="text" size="100" name="age" id="age" /><br />
+        Gender: <input type="text" size="100" name="gender" id="gender" /><br />
+        Location: <input type="text" size="100" name="location" id="location" /><br />
+        Education: <input type="text" size="100" name="education" id="education" /><br />
+        Marital Status: <input type="text" size="100" name="maritalstatus" id="maritalstatus" /><br />
+        Number of Children: <input type="text" size="100" name="children" id="children" /><br />
+    </form>
+    <script>
+         function statusChangeCallback(response) {
+             console.log('!!!!!!!!!!!!!!!!  statusChangeCallback');
+             console.log('!!!!!!!!!!!!!!!!  login response '+ response);
+             if (response.status === 'connected') {
+                 //document.getElementById('logstat').innerHTML = 'FB User ' + response.status;
+                 FB.api('/me?fields=id,name,gender,email,education,hometown,birthday,location,interested_in,languages,religion,relationship_status,family', function (response) {
+                     console.log('API response ' + response);
+                     document.getElementById('logstat').innerHTML = 'FB User ' + response.name;
+
+                     document.getElementById('age').value = _calculateAge(new Date(response.birthday));
+                     document.getElementById('gender').value = response.gender;
+                     document.getElementById('location').value = "";
+                     if (response.location != undefined) {
+                         document.getElementById('location').value = response.location.name;
+                     }
+                     var skola = "";
+                     if (response.education != undefined) {
+                         for (var i = 0; i < response.education.length; i++) {
+                             skola = skola + response.education[i].type + " - " + response.education[i].school.name + ", ";
+                         }
+                     }
+                     document.getElementById('education').value = skola;   //response.education[0].type + " - " + response.education[0].school.name;
+                     document.getElementById('maritalstatus').value = response.relationship_status;
+                     var childrencount = 0;
+                     if (response.family != undefined) {
+                         for (var i = 0; i < response.family.data.length; i++) {
+                             if (response.family.data[i].relationship === 'son' || response.family.data[i].relationship === 'daughter') {
+                                 childrencount++;
+                             }
+                         }
+                     }
+                     document.getElementById('children').value = childrencount;
+                 });
+             } else {
+                 document.getElementById('logstat').innerHTML = 'FB User ' + response.status;
+             }
+         }
+
+         function _calculateAge(birthday) { // birthday is a date
+             var ageDifMs = Date.now() - birthday.getTime();
+             var ageDate = new Date(ageDifMs); // miliseconds from epoch
+             return Math.abs(ageDate.getUTCFullYear() - 1970);
+         }
+    </script>
+
+    <br />
+    <br />
+    <h2 id="linkedinfo"> Linkedin info </h2>
+    <ul id="linkeddata"></ul>
+    <form id="linkedform" method="post" target="_blank">
+        Headline: <input type="text" size="100" name="headline" id="headline" /><br />
+        Job title: <input type="text" size="100" name="jobtitle" id="jobtitle" /><br />
+        Company name: <input type="text" size="100" name="companyname" id="companyname" /><br />
+        Company industry: <input type="text" size="100" name="companyindustry" id="companyindustry" /><br />
+        Start date: <input type="text" size="100" name="startdate" id="startdate" /><br />
+    </form>
+    <br />
+    <br />
+    <script type="in/Login">
+    </script>
+    <button type="button" onclick="closeSession()" id="logoutlinked" disabled>LinkedIn Logout</button> 
+
+        <script type="text/javascript">
+
+            // Setup an event listener to make an API call once auth is complete
+            function onLinkedInLoad() {
+                IN.Event.on(IN, "auth", getProfileData);
+            }
+
+            // Handle the successful return from the API call
+            function onSuccess(data) {
+                console.log(data);
+                document.getElementById('linkedinfo').innerHTML = 'Linkedin user connected as ' + data.firstName + ' ' + data.lastName;
+                //var llist = document.getElementById('linkeddata');
+                //var lli = document.createElement('li');
+                //lli.innerHTML = 'Headline: ' + data.headline;
+                //llist.appendChild(lli);
+
+                document.getElementById('headline').value = data.headline;
+                document.getElementById('jobtitle').value = data.positions.values[0].title;
+                document.getElementById('companyname').value = data.positions.values[0].company.name;
+                document.getElementById('companyindustry').value = data.positions.values[0].company.industry;
+                document.getElementById('startdate').value = data.positions.values[0].startDate.year;
+                document.getElementById('logoutlinked').disabled = false;
+            }
+
+            // Handle an error response from the API call
+            function onError(error) {
+                console.log(error);
+            }
+
+            // Use the API call wrapper to request the member's basic profile data
+            function getProfileData() {
+                IN.API.Raw("/people/~:(firstName,lastName,headline,industry,positions,location,summary)").result(onSuccess).error(onError);
+            }
+
+            function reloadpage() {
+                console.log("reload");
+                location.reload(true);
+            }
+
+            function closeSession() {
+                IN.User.logout(reloadpage, window);
+                document.getElementById('logoutlinked').disabled = true;
+                document.getElementById('linkedinfo').innerHTML = 'Linkedin unconnected - reload page';
+                //window.location.reload(5000);
+            }
+
+        </script>
+</body>
+</html>

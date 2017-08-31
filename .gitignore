@@ -1,0 +1,9 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.pyc
+__pycache__
+.DS_Store
+db.sqlite3
+*_bak
