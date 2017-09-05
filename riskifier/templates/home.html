@@ -1,74 +1,306 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
 
         {% load static %}
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Riskifier</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
-        <!-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet"> -->
-        <!-- Custom styles for this template -->
-        <link href="{% static 'jumbotron.css' %}" rel="stylesheet">
-        <!-- <link href="jumbotron.css" rel="stylesheet"> -->
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="description" content=""> 
+        <meta name="author" content=""> 
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+        <title>Riskifier</title>         
+        <!-- Bootstrap core CSS -->         
+        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">       
+        <!-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet">  -->  
+        <!-- Custom styles for this template -->         
+        <link href="{% static 'jumbotron.css' %}" rel="stylesheet">    
+        <!-- <link href="jumbotron.css" rel="stylesheet">  -->  
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->         
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-        <!-- BEGIN LinkedIn API -->
-        <!-- END Facebook API -->
-    </head>
-    <body>
-        <!-- BEGIN Facebook API -->
-        <!-- END Facebook API -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Riskifier</a>
+    <![endif]-->         
+        <!-- BEGIN LinkedIn API -->         
+        <!-- END Facebook API -->         
+    </head>     
+    <body> 
+        <!-- BEGIN Facebook API -->         
+        <!-- END Facebook API -->         
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="max-height: 22px"> 
+            <div class="container"> 
+                <div class="navbar-header"> 
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> 
+                        <span class="sr-only">Toggle navigation</span> 
+                    </button>                     
+                    <a class="navbar-brand" href="#">Riskifier</a> 
+                </div>                 
+                <div id="navbar" class="navbar-collapse collapse"> 
+                    <form class="navbar-form navbar-right"> 
+                        <a href="/start/" class="btn btn-success">Try now</a> 
+                    </form>                     
+                    <div class="pg-empty-placeholder"></div>
+                </div>                 
+                <!--/.navbar-collapse -->                 
+            </div>             
+        </nav>         
+        <!-- Main jumbotron for a primary marketing message or call to action -->         
+        <div class="container"> 
+            <!-- Example row of columns -->             
+            <div class="row" style="margin-top: 6px;margin-bottom: 6px;display: table;width: 100%">
+                <div class="col-md-2 col-sm-3 col-xs-4" style="display: table-cell;vertical-align: top;text-align: right">
+                    <img src="{% static 'assets/media/Logotype_small.png' %}" style="max-height: 50px;text-align: right" class="hidden-xs" />
+                    <img src="{% static 'assets/media/Logotype_small.png' %}" class="hidden-md hidden-lg hidden-sm" style="max-height: 40px;margin-left: -13px" />
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
-                        <a href="/start/" class="btn btn-success">Try now</a>
-                    </form>
+                <div class="col-md-4 hidden-xs hidden-sm col-sm-1 col-xs-1" style="display: table-cell;vertical-align: middle">
+                    <img src="{% static 'assets/media/RISKIFIER.png' %}" style="max-height: 40px;margin-top: 7px" class="hidden-xs hidden-sm" />
                 </div>
-                <!--/.navbar-collapse -->
+                <div class="col-md-3 col-sm-6 col-xs-6" style="display: table-cell;vertical-align: top;text-align: right">
+                    <button type="button" class="btn btn-default hidden-xs hidden-sm" style="background-color: #fbce3e;font-family: Montserrat;font-weight: bold;font-size: 15px;color: #ffffff;border-color: #fbce3e;border-radius: 88px;letter-spacing: 1px;padding: 10px 40px;margin-left: 5px;margin-right: 5px">TRY NOW</button>
+                    <button type="button" class="btn btn-default hidden-md hidden-lg" style="background-color: #fbce3e;font-family: Montserrat;font-weight: bold;font-size: 15px;color: #ffffff;border-color: #fbce3e;border-radius: 88px;letter-spacing: 1px;padding: 10px 15px">TRY NOW</button>
+                </div>
+                <div class="col-md-3 col-xs-2" style="display: table-cell;vertical-align: top">
+                    <img src="{% static 'assets/media/en_active.png' %}" style="margin-left: 2px;margin-right: 2px;max-height: 45px" class="hidden-xs hidden-sm" />
+                    <img src="{% static 'assets/media/de_inactive.png' %}" style="margin-left: 2px;margin-right: 2px;max-height: 45px" class="hidden-xs hidden-sm" />
+                    <img src="{% static 'assets/media/hamburger.png' %}" style="margin-left: 2px;margin-right: 2px;max-height: 45px" class="hidden-md hidden-lg" />
+                </div>
             </div>
-        </nav>
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="container">
-            <!-- Example row of columns -->
+            <div class="row hidden-xs hidden-sm" style="background-image: url('{% static 'assets/media/Banner_small.png' %}');background-position: left top;text-align: center;vertical-align: middle;background-attachment: scroll;background-repeat: no-repeat;background-size: cover">
+                <div class="col-md-7 col-lg-5">
+                    <h3>&nbsp;</h3> 
+                </div>
+                <div class="col-md-5 col-lg-5" style="height: 791px;vertical-align: middle;text-align: center;align-content: center;align-self: center;display: grid">
+                    <h2 style="text-align: left;color: #ffffff;vertical-align: middle;align-content: center;align-self: center;letter-spacing: 1px;font-weight: normal;font-family: Montserrat;font-size: 38px;margin-left: 56px;line-height: 56px; ">START TO INVEST<br />IN LINE WITH YOUR<br />RISK PREFERENCES</h2>
+                    <button type="button" class="btn btn-default" style="background-color: #fbce3e;font-family: Montserrat;font-weight: bold;font-size: 21px;color: #ffffff;border-color: #fbce3e;border-radius: 88px;letter-spacing: 1px;padding: 10px 40px;margin-left: 56px;margin-right: 5px;margin-top: 30px;background-image: url('{% static 'assets/media/video.png' %}');background-repeat: no-repeat;background-position: left center;background-origin: border-box">WATCH THE VIDEO</button>
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg" style="background-image: url('{% static 'assets/media/Banner_small.png' %}');background-position: left top;text-align: center;vertical-align: middle;background-attachment: scroll;background-repeat: no-repeat;background-size: cover">
+                <div class="col-xs-12" style="height: 500px;vertical-align: top;text-align: center">
+                    <h2 style="text-align: center;color: #ffffff;vertical-align: top;letter-spacing: 1px;font-weight: normal;font-family: Montserrat;font-size: 21px;margin-top: 65px;line-height: 27px;">START TO INVEST<br />IN LINE WITH YOUR<br />RISK PREFERENCES</h2>
+                    <button type="button" class="btn btn-default" style="background-color: #fbce3e;font-family: Montserrat;font-weight: normal;font-size: 21px;color: #ffffff;border-color: #fbce3e;border-radius: 88px;padding: 10px 25px;margin-left: 5px;margin-top: 30px">WATCH THE VIDEO</button>
+                </div>
+            </div>
+            <div class="row hidden-xs hidden-sm" style="background-color: #faf8f2">
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h3 style="font-family: Montserrat;margin-top: 51px;text-align: right;font-size: 27px">INVESTMENT OPPORTUNITIES</h3> 
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: right">Find your preffered investment opportunities</p> 
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="{% static 'assets/media/investment_opportunities.png' %}" style="vertical-align: middle">
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg" style="background-color: #faf8f2">
+                <div class="col-md-2 col-lg-2 hidden-xs hidden-md hidden-lg col-sm-3">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-5">
+                    <img class="img-responsive" src="{% static 'assets/media/investment_opportunities.png' %}" style="vertical-align: middle;margin-top: 20px">
+                </div>
+                <div class="col-md-4 col-lg-3 col-xs-12">
+                    <h3 style="font-family: Montserrat;margin-top: 20px;text-align: center;font-size: 27px">INVESTMENT</h3> 
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 20px;margin-bottom: 20px;text-align: center">Find your preffered investment opportunities</p> 
+                </div>
+            </div>
+            <div class="row" style="display: inline-block">
+                <img width="100%" src="{% static 'assets/media/dividerB.png' %}">
+            </div>
+            <div class="row hidden-xs hidden-sm" style="background-color: #ffffff">
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="{% static 'assets/media/risk_profile.png' %}" style="vertical-align: middle">
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h3 style="font-family: Montserrat;margin-top: 78px;text-align: left;font-size: 27px">RISK PROFILE</h3>
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: left">Discover your<br />risk profile</p> 
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg" style="background-color: #ffffff">
+                <div class="col-md-2 col-lg-2 hidden-xs hidden-md hidden-lg col-sm-3">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-5">
+                    <img class="img-responsive" src="{% static 'assets/media/risk_profile.png' %}" style="vertical-align: middle">
+                </div>
+                <div class="col-md-4 col-lg-3 col-xs-12">
+                    <h3 style="font-family: Montserrat;margin-top: 20px;text-align: center;font-size: 27px">RISK PROFILE</h3> 
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 20px;margin-bottom: 20px;text-align: center">Discover your<br />risk profile</p> 
+                </div>
+            </div>
+            <div class="row" style="display: inline-block">
+                <img width="100%" src="{% static 'assets/media/dividerC.png' %}">
+            </div>
+            <div class="row hidden-xs hidden-sm" style="background-color: #faf8f2">
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h3 style="font-family: Montserrat;margin-top: 78px;text-align: right;font-size: 27px">COMPARING</h3> 
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: right">Compare yourself<br />with the other<br />users</p> 
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="{% static 'assets/media/comparing.png' %}" style="vertical-align: middle">
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg" style="background-color: #faf8f2;text-align: center">
+                <div class="col-md-2 col-lg-2 hidden-xs hidden-md hidden-lg col-sm-3">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-5" style="text-align: center">
+                    <img class="img-responsive" src="{% static 'assets/media/comparing.png' %}" style="vertical-align: middle">
+                </div>
+                <div class="col-md-4 col-lg-3 col-xs-12">
+                    <h3 style="font-family: Montserrat;margin-top: 20px;text-align: center;font-size: 27px">COMPARING</h3> 
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 20px;margin-bottom: 20px;text-align: center">Compare yourself<br />with the other users</p> 
+                </div>
+            </div>
+            <div class="row" style="display: inline-block">
+                <img width="100%" src="{% static 'assets/media/dividerD.png' %}">
+            </div>
+            <div class="row hidden-sm hidden-xs" style="background-color: #ffffff">
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive" src="{% static 'assets/media/easy_investing.png' %}" style="vertical-align: middle">
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h3 style="font-family: Montserrat;margin-top: 78px;text-align: left;font-size: 27px">EASY INVESTING</h3> 
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: left">Invest easy in line<br />with your risk<br />profile</p> 
+                </div>
+            </div>
+            <div class="row hidden-md hidden-lg" style="background-color: #ffffff">
+                <div class="col-md-2 col-lg-2 hidden-xs hidden-md hidden-lg col-sm-3">
+                    <h3> </h3> 
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-5">
+                    <img class="img-responsive" src="{% static 'assets/media/easy_investing.png' %}" style="vertical-align: middle">
+                </div>
+                <div class="col-md-4 col-lg-3 col-xs-12">
+                    <h3 style="font-family: Montserrat;margin-top: 20px;text-align: center;font-size: 27px">EASY INVESTING</h3> 
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 20px;margin-bottom: 20px;text-align: center">Invest easy in line<br />with your risk profile</p> 
+                </div>
+            </div>
             <div class="row">
-                <!-- <img src="assets/media/home-dummy-large.png" width="100%" class="hidden-xs hidden-sm" /> -->
-                <img src="{% static 'assets/media/home-dummy-large.png' %}" width="100%" class="hidden-xs hidden-sm" />
+                <div class="col-md-12" style="text-align: center;margin-top: 20px">
+                    <button type="button" class="btn btn-default" style="background-color: #1fbaef;font-family: Montserrat;font-weight: bold;font-size: 15px;color: #ffffff;border-color: #1fbaef;border-radius: 88px;letter-spacing: 1px;padding: 10px 40px;margin-left: 5px;margin-right: 5px">LEARN MORE</button>                                          
+                </div>
+            </div>
+            <div class="row" style="display: inline-block">
+                <img width="100%" src="{% static 'assets/media/dividerA.png' %}">
+            </div>
+            <div class="row" style="background-color: #faf8f2">
+                <div class="col-md-12" style="text-align: center;background-color: #faf8f2;">
+                    <h2 style="font-weight: bold;font-family: Montserrat">HOW IT IS WORKING?</h2> 
+                </div>
+            </div>
+            <div class="row" style="background-color: #faf8f2"> 
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>                 
 
-                <!-- <img src="assets/media/home-dummy-small.png" width="100%" class="hidden-md hidden-lg" /> -->
-                <img src="{% static 'assets/media/home-dummy-small.png' %}" width="100%" class="hidden-md hidden-lg" />
+                <div class="col-md-4 col-lg-4" style="text-align: center">
+                    <img src="{% static 'assets/media/how_its_working.png' %}" style="vertical-align: middle;margin-top: 11px">
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: center">Play a funny            <br />game</p> 
+                </div>                 
+
+                <div class="col-md-4 col-lg-4" style="text-align: center">
+                    <img src="{% static 'assets/media/your_emotions.png' %}" style="vertical-align: middle">
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: center">Your emotions            <br />gets captured</p> 
+                </div>                 
+
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>
+            </div>
+            <div class="row" style="background-color: #faf8f2"> 
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>                 
+
+                <div class="col-md-4 col-lg-4" style="text-align: center">
+                    <img src="{% static 'assets/media/data_analysing.png' %}" style="vertical-align: middle;margin-top: 12px">
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: center">AI analyzes            <br />the data</p> 
+                </div>                 
+
+                <div class="col-md-4 col-lg-4" style="text-align: center">
+                    <img src="{% static 'assets/media/get_risk_profile.png' %}" style="vertical-align: middle">
+                    <p style="font-family: Montserrat;font-size: 24px;margin-top: 30px;margin-bottom: 30px;text-align: center">You get your             <br /> risk profile</p> 
+                </div>                 
+
+                <div class="col-md-2 col-lg-2">
+                    <h3> </h3> 
+                </div>
+            </div>
+            <div class="row" style="background-color: #faf8f2">
+                <div class="col-md-12" style="text-align: center;margin-top: 20px;margin-bottom: 10px">
+                    <button type="button" class="btn btn-default" style="background-color: #1fbaef;font-family: Montserrat;font-weight: bold;font-size: 15px;color: #ffffff; border: 1px solid;border-color: #1fbaef;border-radius: 88px;letter-spacing: 1px;padding: 10px 40px;margin-left: 5px;margin-right: 5px">LEARN MORE</button>                                          
+                </div>
+            </div>
+            <div class="row" style="display: inline-block">
+                <img width="100%" src="{% static 'assets/media/dividerE.png' %}" style="background-color: #faf8f2">
+            </div>
+            <div class="row" style="background-color: #1fbaef">
+                <div class="col-md-4" style="text-align: center">
+                    <h3 style="font-family: Montserrat;color: #ffffff">STAY UP TO DATE</h3> 
+                    <p style="font-family: Montserrat;color: #ffffff;font-size: 18px;font-weight: 300">Get preferred access to new<br />modules and updated statistics</p>
+                    <button type="button" class="btn btn-default" style="background-color: #1fbaef;font-family: Montserrat;font-weight: 300;font-size: 15px;color: #ffffff;border-color: #ffffff; border: 2px solid;border-radius: 88px;letter-spacing: 1px;padding: 10px 40px;margin-left: 5px;margin-right: 5px">Your E-mail</button>
+                    <br />
+                    <br />
+                    <button type="button" class="btn btn-default " style="background-color: #007FAA;font-family: Montserrat;font-weight: bold;font-size: 15px;color: #ffffff; border: 1px solid;border-color: #007FAA;border-radius: 88px;letter-spacing: 1px;padding: 10px 40px;margin-left: 5px;margin-right: 5px">SEND</button>
+                    <p>&nbsp;</p> 
+                </div>
+                <div class="col-md-4" style="text-align: center">
+                    <h3 style="font-family: Montserrat;color: #ffffff">INVITE YOUR FRIENDS</h3> 
+                    <p style="font-family: Montserrat;color: #ffffff;font-size: 18px;font-weight: 300">The more user the better<br />comparison you have</p>
+                    <div>
+                        <img src="{% static 'assets/media/social_facebook.png' %}" />
+                        <img src="{% static 'assets/media/social_insta.png' %}" />
+                        <img src="{% static 'assets/media/social_google.png' %}" />
+                        <img src="{% static 'assets/media/social_twitter.png' %}" />
+                    </div>                     
+                </div>
+                <div class="col-md-4" style="text-align: center">
+                    <h3 style="font-family: Montserrat;color: #ffffff">CONTACT US</h3> 
+                    <p style="font-family: Montserrat;color: #ffffff;font-size: 18px"><div style="color: #ffffff;font-family: Montserrat;font-size: 18px;font-weight: 300">info@riskifier.io</div><div style="color: #ffffff;font-family: Montserrat;font-size: 18px;font-weight: 300">0041 78672 3211</div></p> 
+                </div>
+            </div>
+            <div class="row" style="background-color: #007FAA">
+                <div class="col-md-2" style="text-align: center">
+                    <p style="font-family: Montserrat;color: #faf0e3;font-size: 18px;margin-top: 30px;margin-bottom: 30px;font-weight: 300">About</p> 
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                    <p style="font-family: Montserrat;color: #faf0e3;font-size: 18px;margin-top: 30px;margin-bottom: 30px;font-weight: 300">Terms of use</p> 
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                    <p style="font-family: Montserrat;color: #faf0e3;font-size: 18px;margin-top: 30px;margin-bottom: 30px;font-weight: 300">Data&nbsp;protection</p> 
+                </div>
+                <div class="col-md-1" style="text-align: center">
+                    <p style="font-family: Montserrat;color: #faf0e3;font-size: 18px;margin-top: 30px;margin-bottom: 30px;font-weight: 300">Contact</p> 
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    <p style="font-family: Montserrat;color: #faf0e3;font-size: 18px;margin-top: 30px;margin-bottom: 30px;font-weight: 300">All rights reserved.</p> 
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                    <p style="font-family: Montserrat;color: #faf0e3;font-size: 18px;margin-top: 30px;margin-bottom: 30px;font-weight: 300">&copy;Riskifier 2017</p> 
+                </div>
             </div>
         </div>         
-        <!-- /container -->
+        <!-- /container -->         
         <!-- Bootstrap core JavaScript
-    ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-        <!-- <script src="assets/js/jquery.min.js"></script> -->
-        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-        <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <!-- <script src="assets/js/ie10-viewport-bug-workaround.js"></script> -->
-        <script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
-    </body>
+    ================================================== -->         
+        <!-- Placed at the end of the document so the pages load faster -->         
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script> -->         
+        <!-- <script src="assets/js/jquery.min.js"></script>      -->       
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+        <!-- <script src="bootstrap/js/bootstrap.min.js"></script>         
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->         
+        <!-- <script src="assets/js/ie10-viewport-bug-workaround.js"></script>     -->       
+        <script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script> 
+    </body>     
 </html>
