@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^questionnaire/$', views.ViewPageQuestionnaire.as_view()),
     url(r'^result/$', views.ViewPageResult.as_view()),
     url(r'^formular/$', views.ViewPageFormular.as_view()),
+    url(r'^emo/$', views.ViewPageEmo.as_view()),
 
     # default
     url(r'^$', views.ViewPageHome.as_view()),

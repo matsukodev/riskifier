@@ -27,3 +27,7 @@ class ViewPageFormular(TemplateView):
     def get(self, request, **kwargs):
         formulars = RiskifierData.objects.all()
         return render(request, 'formular.html', {'formulars': formulars})
+
+class ViewPageEmo(TemplateView):
+    def get(self, request, **kwargs):
+        return render(request, 'affectiva.html', context=None)
